@@ -8,7 +8,7 @@ import { existsSync } from 'fs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const app = express()
-const PORT = 3001
+const PORT = process.env.PORT || 3002
 
 app.use(cors())
 app.use(express.json())
@@ -170,6 +170,6 @@ app.post('/extract', async (req, res) => {
   })
 })
 
-app.listen(PORT, () => {
+app.listen(PORT, '127.0.0.1', () => {
   console.log(`Dembrandt API running on http://localhost:${PORT}`)
 })

@@ -8,6 +8,8 @@ Extract any website’s design system into design tokens in a few seconds: logo,
 
 ![Dembrandt Demo](showcase.png)
 
+![Local UI](local-ui.png)
+
 ## Install
 
 Install globally: `npm install -g dembrandt`
@@ -95,17 +97,11 @@ npm install
 
 ### Running
 
-Start both the API server and UI:
-
 ```bash
-# Terminal 1: Start API server (port 3001)
-node server.js
-
-# Terminal 2: Start UI dev server (port 5173)
-npm run dev
+npm start
 ```
 
-Open http://localhost:5173 to browse saved extractions.
+Opens http://localhost:5173 with API on port 3002.
 
 ### Features
 

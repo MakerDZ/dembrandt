@@ -130,7 +130,7 @@ function App() {
         const match = savedFiles.find(f => getDomain(f.url) === route.domain)
         if (match) {
           try {
-            const response = await fetch(`http://localhost:3001/api/saved-extractions/${match.domain}/${match.filename}`)
+            const response = await fetch(`http://localhost:3002/api/saved-extractions/${match.domain}/${match.filename}`)
             const rawData = await response.json()
             setSelectedFileId(match.id)
             setResult(normalizeResult(rawData))
@@ -240,7 +240,7 @@ function App() {
   const fetchSavedFiles = async () => {
     setLoadingSavedFiles(true)
     try {
-      const response = await fetch('http://localhost:3001/api/saved-extractions')
+      const response = await fetch('http://localhost:3002/api/saved-extractions')
       const data = await response.json()
       setSavedFiles(data)
     } catch (e) {
@@ -256,7 +256,7 @@ function App() {
     // Clear stale data immediately — title updates before fetch completes
     setResult({ url: file.url, extractedAt: file.extractedAt } as ExtractionResult)
     try {
-      const response = await fetch(`http://localhost:3001/api/saved-extractions/${file.domain}/${file.filename}`)
+      const response = await fetch(`http://localhost:3002/api/saved-extractions/${file.domain}/${file.filename}`)
       const rawData = await response.json()
       navigateToSite(normalizeResult(rawData))
     } catch (e) {
@@ -543,7 +543,7 @@ function App() {
                       <div className="bg-card rounded-2xl p-6 inline-block">
                         {hasValidLogo ? (
                           <img
-                            src={`http://localhost:3001/api/proxy-image?url=${encodeURIComponent(logoUrl)}`}
+                            src={`http://localhost:3002/api/proxy-image?url=${encodeURIComponent(logoUrl)}`}
                             alt="Brand logo"
                             width={result.logo!.width || 200}
                             height={result.logo!.height || 60}
@@ -558,7 +558,7 @@ function App() {
                           />
                         ) : bestFavicon ? (
                           <img
-                            src={`http://localhost:3001/api/proxy-image?url=${encodeURIComponent(bestFavicon.url)}`}
+                            src={`http://localhost:3002/api/proxy-image?url=${encodeURIComponent(bestFavicon.url)}`}
                             alt="Brand favicon"
                             className="w-24 h-24 object-contain"
                             onError={(e) => {
