@@ -6,13 +6,15 @@
 
 Extract any website’s design system into design tokens in a few seconds: logo, colors, typography, borders, and more. One command.
 
+![Dembrandt — Any website to design tokens](docs/screenshots/banner.png)
+
 **CLI output**
 
-![Dembrandt Demo](showcase.png)
+![CLI extraction of netflix.com](docs/screenshots/cli-output.png)
 
 **Local UI**
 
-![Local UI](local-ui.png)
+![Local UI showing extracted brand](docs/screenshots/local-ui.png)
 
 ## Install
 
